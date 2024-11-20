@@ -1,25 +1,29 @@
-interface InputProps {
+import React from 'react';
+
+interface Props {
+  handleChange(value: string): void;
+  value: string;
   type: string;
   placeholder: string;
-  value: string;
-  classname?: string;
-  handleChange(value: string): void;
 }
-const Input: React.FC<InputProps> = ({
+
+const Input: React.FC<Props> = ({
+  handleChange,
   type,
   placeholder,
   value,
-  handleChange,
-  classname,
+  ...rest
 }) => {
   return (
     <input
-      className="text-sm bg-gray-100 w-1/3 p-5 text-black"
       type={type}
       placeholder={placeholder}
       value={value}
       onChange={(e) => handleChange(e.target.value)}
+      className="border-2 text-black w-full placeholder:text-black rounded p-3"
+      {...rest}
     />
   );
 };
+
 export default Input;

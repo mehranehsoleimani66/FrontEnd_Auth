@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import Button from '../../../components/shared/button';
 import Input from '../../../components/shared/input';
+import LinkContainer from '../../../components/shared/link-container';
 import { useLogin } from '../../../lib/hooks/auth';
 import { loginType } from '../../../lib/type/auth';
 
@@ -8,6 +9,7 @@ const Page = () => {
   const [form, setForm] = useState<loginType>({
     username: '',
     password: '',
+    email: '',
   });
   const { mutate: mutateLogin } = useLogin();
 
@@ -20,8 +22,7 @@ const Page = () => {
       <h1>ورود کاربر </h1>
       <form
         onSubmit={handleSubmit}
-        className="flex  flex-col  justify-center items-center  gap-5 
-    mt-10 "
+        className="p-6 rounded-xl border-2 flex flex-col gap-6 w-[350px] m-auto"
       >
         <Input
           type="text"
@@ -29,6 +30,14 @@ const Page = () => {
           value={form.username}
           handleChange={(value: string) =>
             setForm((prev) => ({ ...prev, username: value }))
+          }
+        />
+        <Input
+          type="email"
+          placeholder="ایمیل "
+          value={form.email}
+          handleChange={(value: string) =>
+            setForm((prev) => ({ ...prev, email: value }))
           }
         />
 
@@ -41,6 +50,7 @@ const Page = () => {
           }
         />
         <Button type="submit"> ورود</Button>
+        <LinkContainer to="/auth/forgot-password" text="فراموشی رمز عبور" />
       </form>
     </section>
   );

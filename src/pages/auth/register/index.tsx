@@ -9,6 +9,7 @@ const Page = () => {
     username: '',
     fullname: '',
     password: '',
+    email: '',
   });
   const { mutate: mutateRegister } = useRegister();
   const submitHandler = (e: any) => {
@@ -22,8 +23,7 @@ const Page = () => {
       <h1>ورود کاربر </h1>
       <form
         onSubmit={submitHandler}
-        className="flex  flex-col  justify-center items-center  gap-5 
-    mt-10 "
+        className="p-6 rounded-xl border-2 flex flex-col gap-6 w-[350px] m-auto"
       >
         <Input
           type="text"
@@ -35,14 +35,21 @@ const Page = () => {
         />
 
         <Input
-          type="email"
+          type="text"
           placeholder="نام کاربری"
           value={form.username}
           handleChange={(value: string) =>
             setForm((prev) => ({ ...prev, username: value }))
           }
         />
-
+        <Input
+          type="text"
+          placeholder=" ایمیل  "
+          value={form.email}
+          handleChange={(value: string) =>
+            setForm((prev) => ({ ...prev, email: value }))
+          }
+        />
         <Input
           type="password"
           placeholder="رمز کاربری"

@@ -14,7 +14,7 @@ export const useRegister = () => {
       const accessToken = response.data.token.accessToken;
       localStorage.setItem('accessToken', accessToken);
       // Navigate to the desired route after registration
-      navigate('/dashboard'); // به مسیر مورد نظر بعد از ثبت‌نام هدایت کنید
+      navigate('/'); // به مسیر مورد نظر بعد از ثبت‌نام هدایت کنید
     },
     onError: (error) => {
       console.error('Registration Error:', error);
@@ -41,7 +41,7 @@ export const useLogin = () => {
       const accessToken = response.data.token.accessToken;
       localStorage.setItem('accessToken', accessToken);
       // Navigate to the desired route after login
-      navigate('/dashboard'); // به مسیر مورد نظر بعد از لاگین هدایت کنید
+      navigate('/'); // به مسیر مورد نظر بعد از لاگین هدایت کنید
     },
     onError: (error) => {
       console.error('Login Error:', error);

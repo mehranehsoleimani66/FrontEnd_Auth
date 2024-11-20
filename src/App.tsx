@@ -6,6 +6,7 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Header from './components/header';
 import store from './lib/store/query-client';
 import About from './pages/about';
+import ForgetPassword from './pages/auth/forget-password';
 import Login from './pages/auth/login';
 import Register from './pages/auth/register';
 import HomePage from './pages/home';
@@ -22,6 +23,7 @@ const App = () => {
           <Route path="/about" element={<About />} />
           <Route path="/products" element={<Products />} />
           <Route path="/auth/login" element={<Login />} />
+          <Route path="/auth/forget-password" element={<ForgetPassword />} />
           <Route path="/auth/register" element={<Register />} />
         </Routes>
       </BrowserRouter>

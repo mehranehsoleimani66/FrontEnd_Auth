@@ -1,7 +1,7 @@
 interface ButtonProps {
   children: React.ReactNode;
 
-  type: 'submit' | 'reset' | 'button';
+  type?: 'submit' | 'reset' | 'button';
 }
 
 const Button: React.FC<ButtonProps> = ({ children, type }) => {

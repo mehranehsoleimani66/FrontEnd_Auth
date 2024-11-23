@@ -6,9 +6,9 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Header from './components/header';
 import store from './lib/store/query-client';
 import About from './pages/about';
-import ForgetPassword from './pages/auth/forget-password';
-import Login from './pages/auth/login';
-import Register from './pages/auth/register';
+import ForgotPassword from './pages/auth/forget-password/page';
+import Login from './pages/auth/login/page';
+import Register from './pages/auth/register/page';
 import HomePage from './pages/home';
 import Products from './pages/products';
 // Store
@@ -23,7 +23,7 @@ const App = () => {
           <Route path="/about" element={<About />} />
           <Route path="/products" element={<Products />} />
           <Route path="/auth/login" element={<Login />} />
-          <Route path="/auth/forget-password" element={<ForgetPassword />} />
+          <Route path="/auth/forgot-password" element={<ForgotPassword />} />
           <Route path="/auth/register" element={<Register />} />
         </Routes>
       </BrowserRouter>

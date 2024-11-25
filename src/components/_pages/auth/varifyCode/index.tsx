@@ -1,4 +1,4 @@
 const VarifyCode = () => {
-  return <div>resset-password</div>;
+  return <div>verify-code</div>;
 };
 export default VarifyCode;

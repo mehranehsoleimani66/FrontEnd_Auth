@@ -1,21 +1,20 @@
 import { useState } from 'react';
-import { useLogin } from '../../../lib/hooks/auth';
-import Button from '../../shared/button';
-import Input from '../../shared/input';
-import LinkContainer from '../../shared/link-container';
+import { useLogin } from '../../../../lib/hooks/auth';
+import Button from '../../../shared/button';
+import Input from '../../../shared/input';
+import LinkContainer from '../../../shared/link-container';
 
 const Form = () => {
-  const [form, setForm] = useState({
+  const [formState, setFormState] = useState({
     username: '',
     password: '',
-    email: '',
   });
 
   const { mutate: mutateLogin } = useLogin();
 
   const handleSubmit = (e: any) => {
     e.preventDefault();
-    mutateLogin(form);
+    mutateLogin(formState);
   };
   return (
     <form
@@ -25,17 +24,17 @@ const Form = () => {
       <Input
         placeholder="نام کاربری"
         type="string"
-        value={form.username}
+        value={formState.username}
         handleChange={(value) =>
-          setForm((prev) => ({ ...prev, username: value }))
+          setFormState((prev) => ({ ...prev, username: value }))
         }
       />
       <Input
         placeholder="رمز کاربری"
         type="password"
-        value={form.password}
+        value={formState.password}
         handleChange={(value) =>
-          setForm((prev) => ({ ...prev, password: value }))
+          setFormState((prev) => ({ ...prev, password: value }))
         }
       />
       <Button>ورود</Button>

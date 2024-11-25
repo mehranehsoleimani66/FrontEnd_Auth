@@ -1,12 +1,12 @@
 import { useState } from 'react';
-import { useRegister } from '../../../lib/hooks/auth';
-import { registerType } from '../../../lib/type/auth';
-import Button from '../../shared/button';
-import Input from '../../shared/input';
-import LinkContainer from '../../shared/link-container';
+import { useRegister } from '../../../../lib/hooks/auth';
+import { RegisterArgs } from '../../../../pages/auth/_types/register';
+import Button from '../../../shared/button';
+import Input from '../../../shared/input';
+import LinkContainer from '../../../shared/link-container';
 
-const RegisterForm = () => {
-  const [form, setForm] = useState<registerType>({
+const Register = () => {
+  const [formState, setFormState] = useState<RegisterArgs>({
     fullname: '',
     username: '',
     password: '',
@@ -17,7 +17,7 @@ const RegisterForm = () => {
 
   const handleSubmit = (e: any) => {
     e.preventDefault();
-    mutateRegister(form);
+    mutateRegister(formState);
   };
   return (
     <form
@@ -27,33 +27,33 @@ const RegisterForm = () => {
       <Input
         placeholder="نام و نام خانوادگی"
         type="string"
-        value={form.fullname}
+        value={formState.fullname}
         handleChange={(value) =>
-          setForm((prev: any) => ({ ...prev, fullname: value }))
+          setFormState((prev) => ({ ...prev, fullname: value }))
         }
       />
       <Input
         placeholder="نام کاربری"
         type="string"
-        value={form.username}
+        value={formState.username}
         handleChange={(value) =>
-          setForm((prev: any) => ({ ...prev, username: value }))
+          setFormState((prev) => ({ ...prev, username: value }))
         }
       />
       <Input
         placeholder="ایمیل کاربری"
         type="email"
-        value={form.email}
+        value={formState.email}
         handleChange={(value) =>
-          setForm((prev: any) => ({ ...prev, email: value }))
+          setFormState((prev) => ({ ...prev, email: value }))
         }
       />
       <Input
         placeholder="رمز کاربری"
         type="password"
-        value={form.password}
+        value={formState.password}
         handleChange={(value) =>
-          setForm((prev: any) => ({ ...prev, password: value }))
+          setFormState((prev) => ({ ...prev, password: value }))
         }
       />
       <Button>ثبت نام</Button>
@@ -66,4 +66,4 @@ const RegisterForm = () => {
   );
 };
 
-export default RegisterForm;
+export default Register;

@@ -1,6 +1,6 @@
 import React, { FormEvent } from 'react';
-import Button from '../../shared/button';
-import Input from '../../shared/input';
+import Button from '../../../shared/button';
+import Input from '../../../shared/input';
 
 interface Props {
   handleRequestEmail: (e: FormEvent) => void;

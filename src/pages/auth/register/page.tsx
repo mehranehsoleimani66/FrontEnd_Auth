@@ -1,10 +1,10 @@
-import RegisterForm from '../../../components/auth/register/form';
+import Register from '../../../components/_pages/auth/register/form';
 
 const Page = () => {
   return (
     <section>
       <h1>ورود کاربر </h1>
-      <RegisterForm />
+      <Register />
     </section>
   );
 };

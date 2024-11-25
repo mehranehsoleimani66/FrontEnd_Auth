@@ -22,10 +22,12 @@ export default Request;
 
 export const Register = async (args: RegisterArgs) => {
   const response = await Request.post<RegisterResponse>('/auth/register', args);
+  console.log('Registration Successful:', response.data);
   return response.data;
 };
 export const Login = async (args: LoginArgs) => {
   const response = await Request.post<LoginResponse>('/auth/login', args);
+
   return response.data;
 };
 export const getMe = async () => {
